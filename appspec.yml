@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: ./gembook-service.jar
+    destination: /home/centos/java-services
+hooks:
+  ApplicationStop:
+    - location: stop.sh
+      timeout: 180
+      runas: root
+  ApplicationStart:
+    - location: start.sh
+      timeout: 180
+      runas: root
