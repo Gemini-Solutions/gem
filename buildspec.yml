@@ -1,0 +1,17 @@
+version: 0.1
+
+phases:
+  build:
+    commands:
+      - echo Entered access-control svc the build phase...
+      - mvn -Paws clean package -Dmaven.test.skip=true
+  post_build:
+    commands:
+      - echo gembook svc Build completed successfully
+artifacts:
+  files:
+    - target/gembook-service.jar
+    - appspec.yml
+    - scripts/start.sh
+    - scripts/stop.sh
+  discard-paths: yes
