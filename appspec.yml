@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: ./gembook-service.jar
-    destination: /home/centos/java-services
+    destination: /home/ec2-user
 hooks:
   ApplicationStop:
     - location: stop.sh
